@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MahilAi - Empowering Women Through AI</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #6a1b9a, #ff4081);
+            color: #333;
+            overflow-x: hidden;
+            animation: gradientBackground 10s ease infinite;
+        }
+
+        @keyframes gradientBackground {
+            0% { background: linear-gradient(135deg, #6a1b9a, #ff4081); }
+            50% { background: linear-gradient(135deg, #ff4081, #6a1b9a); }
+            100% { background: linear-gradient(135deg, #6a1b9a, #ff4081); }
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #9a006e;
+            color: #fff;
+            padding: 15px 40px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        header img {
+            height: 80px;
+            margin-right: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        header p {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            width: 50%;
+            gap: 12px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 6px 12px;
+            border-radius: 20px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background: #0066cc;
+        }
+
+        .hero {
+            background: url('image.jpg') no-repeat center center/cover;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            padding: 250px;
+            animation: fadeInUp 2s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-top: 10px;
+        }
+
+        .hero button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border: none;
+            background: #0066cc;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .hero button:hover {
+            background: #004d9a;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section {
+            margin: 40px 0;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            color: #004d9a;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .section p {
+            font-size: 1.1rem;
+            color: #444;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        #about {
+            background: #fff3e6;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            color: #333;
+        }
+
+        #about p {
+            color: #5a005a;
+            font-weight: 500;
+        }
+
+        #hackathons {
+            background: #e8f5e9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            color: #004d40;
+        }
+
+        #hackathons p {
+            color: #2c6c46;
+            font-weight: 500;
+        }
+
+        .activities {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .activity {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            flex: 1 1 calc(33% - 20px);
+            max-width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .activity:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .activity h3 {
+            color: #004d9a;
+            margin-bottom: 10px;
+        }
+
+        .testimonials {
+            background: #e8eff7;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        .testimonial {
+            margin-bottom: 20px;
+            font-style: italic;
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .testimonial::before {
+            content: '"';
+            font-size: 2rem;
+            color: #004d9a;
+            position: absolute;
+            left: 10px;
+            top: -10px;
+        }
+
+        .testimonial::after {
+            content: '"';
+            font-size: 2rem;
+            color: #004d9a;
+            position: absolute;
+            right: 10px;
+            bottom: -10px;
+        }
+
+        .testimonial p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .join {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .join button {
+            background: #004d9a;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: background 0.3s;
+            animation: pulse 1.5s infinite;
+        }
+
+        .join button:hover {
+            background: #0066cc;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        footer a {
+            color: #004d9a;
+            text-decoration: none;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .pulse {
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .button {
+            position: relative;
+            overflow: hidden;
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: #2980b9;
+            transition: left 0.3s ease;
+        }
+
+        .button:hover::before {
+            left: 0;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const heroButton = document.querySelector('.hero button');
+
+            heroButton.addEventListener('click', () => {
+                alert('Thank you for joining us on this journey to empower women through AI!');
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div>
+            <img src="img.png" alt="PES Logo">
+        </div>
+        <div>
+            <h1>MahilAI</h1>
+            <p>Empowering Women Through AI – Together, We Make a Difference</p>
+        </div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#activities">Activities</a>
+            <a href="#hackathons">Hackathons</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#join">Join Us</a>
+        </nav>
+    </header>
+    <div class="hero">
+        <div>
+            <h1>Empower Change with AI</h1>
+            <p>Innovate, Collaborate, and Lead the Way to a Safer Future.</p>
+            <button class="pulse">Get Started</button>
+        </div>
+    </div>
+    <div class="container">
+        <section id="about" class="section fade-in">
+            <h2>About MahilAi</h2>
+            <p>MahilAi is a student-driven club dedicated to empowering women through the innovative use of Artificial Intelligence (AI). We believe that AI holds the potential to create a safer, more equitable world, especially for women. Our club focuses on developing AI-powered solutions that tackle the unique challenges faced by women, ranging from personal safety to professional opportunities.
+
+                At MahilAi, we create a collaborative and inclusive environment where students can explore and apply AI technologies in meaningful ways. Whether it's through workshops, hackathons, or research initiatives, we work together to harness the power of AI for positive social impact.
+                
+                Our team consists of passionate individuals from diverse backgrounds, all united by the common goal of using AI to make the world a safer place for women. Through innovation, education, and hands-on experience, we strive to inspire the next generation of female leaders in tech, while also contributing to the development of AI solutions that directly improve women's lives.
+                
+            </section>
+            <section id="activities" class="section fade-in">
+                <h2>Activities</h2>
+                <div class="activities">
+                    <div class="activity">
+                        <h3>Workshops</h3>
+                        <p>Hands-on training sessions to learn AI tools, programming languages, and innovative techniques for solving real-world problems.</p>
+                    </div>
+                    <div class="activity">
+                        <h3>Seminars</h3>
+                        <p>Interactive sessions with industry experts sharing insights on the latest trends and applications of AI in empowering women.</p>
+                    </div>
+                    <div class="activity">
+                        <h3>Collaborative Projects</h3>
+                        <p>Opportunities to collaborate on AI projects that directly address social issues faced by women globally.</p>
+                    </div>
+                </div>
+            </section>
+            <section id="hackathons" class="section fade-in">
+                <h2>Hackathons</h2>
+                <p>Our hackathons bring together students, professionals, and AI enthusiasts to brainstorm and build AI-driven solutions for women's safety, education, and career growth. Participants are encouraged to think creatively and deliver impactful results in a limited timeframe. Winners receive mentorship, resources, and recognition to further their ideas.</p>
+            </section>
+            <section id="testimonials" class="section fade-in">
+                <h2>Testimonials</h2>
+                <div class="testimonials">
+                    <div class="testimonial">
+                        <p>"MahilAi gave me the confidence to explore AI and its potential for creating safer spaces for women. The supportive community and practical experience made all the difference!" - Priya S.</p>
+                    </div>
+                    <div class="testimonial">
+                        <p>"Joining MahilAi was the best decision I made in college. I learned so much about AI and got to work on meaningful projects that truly make a difference." - Ananya R.</p>
+                    </div>
+                    <div class="testimonial">
+                        <p>"The workshops and hackathons hosted by MahilAi are amazing! It's inspiring to see how AI can be used for social good." - Meera T.</p>
+                    </div>
+                </div>
+            </section>
+            <section id="join" class="section fade-in">
+                <h2>Join Us</h2>
+                <p>If you're passionate about AI and want to make a positive impact on society, MahilAi is the perfect place for you. We welcome individuals from all backgrounds who share our vision of empowering women through technology. Together, we can create innovative solutions and inspire change.</p>
+                <div class="join">
+                    <button>Join MahilAi</button>
+                </div>
+            </section>
+        </div>
+        <footer>
+            <p>&copy; 2025 MahilAi | All Rights Reserved</p>
+            <p><a href="mailto:info@mahilai.com">info@mahilai.com</a></p>
+        </footer>
+    </body>
+    </html>
+    
